@@ -2,7 +2,14 @@
   Dynamic Components
 </h1>
 
-<div *ngFor="let data of getData(); let i = index;">
-  {{i}}
-  <app-dynamic [data]="data"></app-dynamic>
+<h2>Übersicht</h2>
+{{data[0]|json}}<br>
+{{data[1]|json}}<br>
+{{data[2]|json}}<br>
+{{data[3]|json}}<br>
+
+<hr>
+
+<div *ngFor="let dataentry of getData(); let i = index;">
+  <app-dynamic [data]="dataentry"></app-dynamic>
 </div>

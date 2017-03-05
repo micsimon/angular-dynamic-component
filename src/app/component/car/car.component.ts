@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component} from "@angular/core";
 import {AbstractDataComponent} from "../AbstractDataComponent";
 
 @Component({
@@ -6,12 +6,7 @@ import {AbstractDataComponent} from "../AbstractDataComponent";
   templateUrl: './car.component.html',
   styleUrls: ['./car.component.css']
 })
-export class CarComponent extends AbstractDataComponent implements OnInit {
+export class CarComponent extends AbstractDataComponent {
 
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
 }

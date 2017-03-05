@@ -1,7 +1,6 @@
 ///<reference path="../../../../node_modules/@angular/core/src/linker/component_factory_resolver.d.ts"/>
 import {
   Component,
-  OnInit,
   ViewContainerRef,
   ComponentRef,
   ViewChild,
@@ -22,11 +21,12 @@ import {ThingType} from "../../model/ThingType";
   templateUrl: 'dynamic.component.html',
   styleUrls: ['dynamic.component.css']
 })
-export class DynamicComponent implements OnInit, AfterContentInit {
+export class DynamicComponent implements AfterContentInit {
 
   @Input() private data: AbstractThing;
 
-  @ViewChild('target', {read: ViewContainerRef}) target: ViewContainerRef;
+  @ViewChild('target', {read: ViewContainerRef})
+  target: ViewContainerRef;
 
   private componentRef: ComponentRef<AbstractDataComponent>;
 
@@ -39,7 +39,7 @@ export class DynamicComponent implements OnInit, AfterContentInit {
     let factory: ComponentFactory<AbstractDataComponent> = this.compiler.resolveComponentFactory(compoentToCompile);
 
     this.componentRef = this.target.createComponent(factory);
-    this.componentRef.instance.name = this.data.getName();
+    this.componentRef.instance.data = this.data;
     this.componentRef.changeDetectorRef.detectChanges();
 
   }
@@ -49,8 +49,5 @@ export class DynamicComponent implements OnInit, AfterContentInit {
     return this.data.getType() === ThingType.PERSON ? PersonComponent : CarComponent;
   }
 
-
-  ngOnInit(): void {
-  }
 
 }

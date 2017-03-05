@@ -10,7 +10,7 @@ import {Person} from "../../model/Person";
 })
 export class AppComponent {
 
-  private data: AbstractThing[] = [
+  public data: AbstractThing[] = [
     new Car("Audi", 203),
     new Person("Dieter", 55),
     new Person("Hans", 18),

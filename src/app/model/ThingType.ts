@@ -6,4 +6,8 @@ export class ThingType {
   public static PERSON = new ThingType("person");
   public static CAR = new ThingType("car");
 
+  getName(): string {
+    return this.name;
+  }
+
 }
