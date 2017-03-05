@@ -6,12 +6,14 @@ import {AppComponent} from "./component/app/app.component";
 import {PersonComponent} from "./component/person/person.component";
 import {CarComponent} from "./component/car/car.component";
 import {DataService} from "./service/data/data.service";
+import {DynamicComponent} from "./component/dynamic/dynamic.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonComponent,
-    CarComponent
+    CarComponent,
+    DynamicComponent
   ],
   imports: [
     BrowserModule,
